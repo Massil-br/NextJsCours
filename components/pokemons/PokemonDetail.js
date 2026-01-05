@@ -40,7 +40,7 @@ export default  function PokemonDetail({ pokemon }) {
 
             {/* Types */}
             <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-              {pokemon.types.map((type) => (
+              {pokemon.types?.map((type) => (
                 <div
                   key={type.name}
                   className="flex items-center gap-1 rounded-full bg-slate-50 px-3 py-1 border border-slate-100"
@@ -80,10 +80,7 @@ export default  function PokemonDetail({ pokemon }) {
               <p>
                 <span className="font-semibold">Poids :</span> {pokemon.weight}
               </p>
-              <p>
-                <span className="font-semibold">Groupes d&apos;œufs :</span>{" "}
-                {pokemon.egg_groups.join(", ")}
-              </p>
+
               <p>
                 <span className="font-semibold">Taux de capture :</span>{" "}
                 {pokemon.catch_rate}
@@ -96,7 +93,7 @@ export default  function PokemonDetail({ pokemon }) {
               Talents
             </h2>
             <div className="rounded-xl bg-slate-50 border border-slate-100 p-4 text-sm text-slate-700 space-y-2">
-              {pokemon.talents.map((talent) => (
+              {pokemon.talents?.map((talent) => (
                 <div
                   key={talent.name}
                   className="flex items-center justify-between gap-2"
@@ -119,22 +116,22 @@ export default  function PokemonDetail({ pokemon }) {
             <div className="rounded-xl bg-slate-50 border border-slate-100 p-4 text-sm text-slate-700 space-y-2">
               <div className="flex justify-between text-xs">
                 <span>Mâle</span>
-                <span>{pokemon.sexe.male}%</span>
+                <span>{pokemon.sexe?.male}%</span>
               </div>
               <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-sky-500"
-                  style={{ width: `${pokemon.sexe.male}%` }}
+                  style={{ width: `${pokemon.sexe?.male}%` }}
                 />
               </div>
               <div className="flex justify-between text-xs mt-1">
                 <span>Femelle</span>
-                <span>{pokemon.sexe.female}%</span>
+                <span>{pokemon.sexe?.female}%</span>
               </div>
               <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-rose-400"
-                  style={{ width: `${pokemon.sexe.female}%` }}
+                  style={{ width: `${pokemon.sexe?.female}%` }}
                 />
               </div>
             </div>
@@ -207,7 +204,7 @@ export default  function PokemonDetail({ pokemon }) {
         </div>
 
          {/* Évolutions */}
-         {(pokemon.evolution.pre || pokemon.evolution.next?.length) && (
+         {(pokemon.evolution?.pre || pokemon.evolution?.next?.length) && (
           <div className="mt-6 pt-4 border-t border-slate-100">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
               Évolutions

@@ -1,6 +1,6 @@
 import { GetAllPokemons } from "@/services/pokemonService";
 
-export default async function PokemmonSupabasePage(){
+export default async function PokemonSupabasePage(){
     const pokemons = await GetAllPokemons();
     console.log(pokemons);
     return (
